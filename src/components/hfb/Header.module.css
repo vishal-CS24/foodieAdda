@@ -1,0 +1,39 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #e69597;
+  margin-bottom: 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.navbarItems {
+  display: flex;
+  align-items: center;
+}
+.navbarItems > ul {
+  padding: 0;
+  display: flex;
+  align-self: center;
+  list-style: none;
+  font-size: 20px;
+  margin: auto;
+}
+.navbarItems > ul > li {
+  font-weight: 500;
+  padding: 10px;
+}
+.navbarItems > ul > li > a {
+  color: black;
+  text-decoration: none;
+}
+
+.loggedINOUT {
+  height: 40px;
+  width: 100px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  padding: 2px;
+  margin-left: 20px;
+}
