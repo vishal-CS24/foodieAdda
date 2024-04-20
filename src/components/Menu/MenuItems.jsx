@@ -15,7 +15,7 @@ const MenuItems = ({ items }) => {
            {item?.card?.info?.imageId && <img
               src={IMAGE_CDN + item?.card?.info?.imageId}
               alt=""
-              height={"100px"}
+              height={"130px"}
               width={"130px"}
               className="rounded"
             />}

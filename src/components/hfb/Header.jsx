@@ -1,28 +1,28 @@
 import { useState } from "react";
-import logo from "../assets/Designer.png";
-import styles from "./Header.module.css";
+import logo from "../../assets/Designer.png";
+import styles from "../hfb/Header.module.css";
 import { ImCart } from "react-icons/im";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useLogin } from '../../hooks/useLogin';
 const Header = () => {
-  const [isloggedIN, setIsloggedIN] = useState(false);
-  //   return true
-  // }
+  const { loginState, logout } = useLogin();
+  const navigate = useNavigate();
   return (
     <>
       <div className={styles.navBar}>
         <div className={`${styles.navLogo}`}>
-          <Link to={"/"}><img src={logo} alt="logo" width={"65px"} height={"65px"} /></Link>
+          <Link to={"/home"}><img src={logo} alt="logo" width={"65px"} height={"65px"} /></Link>
         </div>
         <div className={styles.navbarItems}>
           <ul>
             <li>
-            <Link to={"/"}>Home</Link>
+            <Link to={"/home"}>Home</Link>
             </li>
             <li>
-            <Link to={"/about"}>About</Link>
+            <Link to={"/home/about"}>About</Link>
             </li>
             <li>
-            <Link to={"/contact"}>Contact</Link>
+            <Link to={"/home/contact"}>Contact</Link>
             </li>
             <li>
               <a href="#">
@@ -31,7 +31,7 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          {!isloggedIN ? (
+          {loginState ? (
             <button
               onClick={() => setIsloggedIN(true)}
               className={`${styles.loggedINOUT}`}
@@ -40,7 +40,8 @@ const Header = () => {
             </button>
           ) : (
             <button
-              onClick={() => setIsloggedIN(false)}
+              onClick={() => {logout();
+                navigate("/") } }
               className={`${styles.loggedINOUT}`}
             >
               Logged Out
