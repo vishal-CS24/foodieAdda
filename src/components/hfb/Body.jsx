@@ -21,7 +21,7 @@ const Body = () => {
           name="search"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
-          className={`${styles.searchBar} m-3`}
+          className={`${styles.searchBar} m-3 focus:bg-red-200 focus:placeholder:text-slate-950`}
           placeholder="Enter Restaurant name here!"
         />
         <button

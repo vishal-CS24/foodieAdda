@@ -12,6 +12,7 @@
 }
 .restaurantImage > img {
   border-radius: 10px;
+  height: 155px;
 }
 .resDetails {
   padding: 5px;

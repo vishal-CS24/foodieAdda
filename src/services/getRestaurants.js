@@ -10,7 +10,6 @@ export async function getRestauerants(
   setallRestaurants(res);
   setFilteredRestaurants(res);
 }
-
 export const getRestauerantsInfo = async (setRestInfo, setCartElements, id) => {
   const data = await fetch(FETCH_MENU_URL + id);
   const json = await data.json();

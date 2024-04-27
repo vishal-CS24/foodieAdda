@@ -15,9 +15,17 @@ const MenuAllItems = ({ element }) => {
             {element?.title}({element?.itemCards?.length})
           </h5>
           {!showMenu ? (
-            <IoIosArrowDropdown size={30} onClick={() => setShowMenu(true)} />
+            <IoIosArrowDropdown
+              size={30}
+              onClick={() => setShowMenu(true)}
+              className="cursor-pointer"
+            />
           ) : (
-            <IoIosArrowDropup size={30} onClick={() => setShowMenu(false)} />
+            <IoIosArrowDropup
+              size={30}
+              onClick={() => setShowMenu(false)}
+              className="cursor-pointer"
+            />
           )}
         </div>
       )}
