@@ -4,9 +4,11 @@ import styles from "../hfb/Header.module.css";
 import { ImCart } from "react-icons/im";
 import { Link, useNavigate } from "react-router-dom";
 import { useLogin } from "../../hooks/useLogin";
+import { useSelector } from "react-redux";
 const Header = () => {
   const { loginState, logout } = useLogin();
   const navigate = useNavigate();
+  const cartItems = useSelector((store) => store.cart.items);
   return (
     <>
       <div className={styles.navBar}>
@@ -31,6 +33,7 @@ const Header = () => {
                 {" "}
                 <ImCart size={"30px"} />
               </a>
+              <span>{cartItems.length}</span>
             </li>
           </ul>
           {loginState ? (
